@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "govdemo"
+version = "0.2.0"
+description = "Local-first end-to-end data governance demo (AWS-mappable) with restricted PII activation path."
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "typer>=0.12",
+  "rich>=13.7",
+  "duckdb>=0.10",
+  "pyarrow>=16.0",
+  "pydantic>=2.6",
+  "PyYAML>=6.0",
+]
+
+[project.scripts]
+govdemo = "govdemo.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

@@ -1,0 +1,22 @@
+roles:
+  data_engineer:
+    read: [landing, raw, clean, curated, serving, restricted_pii, exports, quarantine, warehouse]
+    write: [landing, raw, clean, curated, serving, restricted_pii, exports, quarantine, warehouse]
+
+  analyst:
+    read: [curated, warehouse]
+    write: []
+
+  product_service:
+    read: [serving]
+    write: []
+
+  activation_service:
+    read: [curated, restricted_pii, warehouse]
+    write: [exports, warehouse]
+
+  governance_officer:
+    read: [warehouse]
+    write: []
+
+
